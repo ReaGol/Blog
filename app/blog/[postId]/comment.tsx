@@ -9,7 +9,7 @@ const handleSubmit = (data: any) => {
   return (
     <div className='post-card'>
       {" "}
-      <form action='' onSubmit={handleSubmit}>
+      <form className="flex-col" action='' onSubmit={handleSubmit}>
         <input type='text' />
         <button onClick={handleSubmit}>Submit comment</button>
       </form>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Post from "../../components/Post";
+import Comment from "./[postId]/Comment"
 
 async function getAllPosts() {
   try {
@@ -24,8 +25,8 @@ async function BlogPost() {
         {posts.map((post: any) => (
           <li key={post.id}>
             <Post post={post} />{" "}
-            {/* Render each post using the Post component */}
             <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+            <Comment/>
           </li>
         ))}
       </ul>
