@@ -1,23 +1,25 @@
-"use client";
 
 
+import React from 'react';
+import Post from '../../../components/Post'; 
 
+interface BlogPost {
+  id: number;
+  title: string;
+  content: string;
 
-export async function getPostDetails(postId: any) {
-    const post =  await fetch('https://jsonplaceholder.typicode.com/posts'+postId)
-    return post.json();
 }
 
-export async function PostPage ({ params }: any) {
-    const postDetails = await getPostDetails(params.postId);
-
+const BlogPage = ({ posts }: { posts: BlogPost[] }) => {
   return (
-    <>
-        <h1>{postDetails.title}</h1>
-        <pre>{JSON.stringify(postDetails, null, 2)}</pre>
-        {/* <Comment id={postDetails.id}/> */}
-    </>
-  )
-}
+    <div>
+      {posts.map((post) => (
+        <div key={post.id} className="post-card">
+          <Post post={post} />
+        </div>
+      ))}
+    </div>
+  );
+};
 
-export default getPostDetails
+export default BlogPage;

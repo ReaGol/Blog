@@ -18,7 +18,7 @@ export default function RootLayout({
         <Link href='/blog'>Blog</Link>
         <Link href='/about'>About</Link>
         {children}
-        
+      
       </body>
     </html>
   );

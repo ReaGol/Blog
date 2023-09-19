@@ -2,11 +2,16 @@ import Link from "next/link";
 
 function Home() {
   return (
-    <ul>
-      <li>
-        <Link href='/'>Home</Link>
-      </li>
-    </ul>
+    <div>
+      <h1 className='text-3xl font-semibold text-blue-800'>Home Page</h1>
+      <p className='text-gray-600'>Welcome to our blog!</p>
+
+      <ul>
+        <li>
+          <Link href='/'>Home</Link>
+        </li>
+      </ul>
+    </div>
   );
 }
 

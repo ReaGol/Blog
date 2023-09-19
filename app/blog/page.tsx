@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Post from "../../components/Post";
 
 async function getAllPosts() {
   try {
@@ -10,7 +11,7 @@ async function getAllPosts() {
     return posts;
   } catch (error) {
     console.error(error);
-    return []; 
+    return [];
   }
 }
 
@@ -18,13 +19,21 @@ async function BlogPost() {
   const posts = await getAllPosts();
 
   return (
-    <ul>
-      {posts.map((post: any) => (
-        <li key={post.id}>
-          <Link href={`/blog/${post.slug}`}>{post.title}</Link>
-        </li>
-      ))}
-    </ul>
+    <div>
+      <ul>
+        {posts.map((post: any) => (
+          <li key={post.id}>
+            <Post post={post} />{" "}
+            {/* Render each post using the Post component */}
+            <Link href={`/blog/${post.slug}`}>{post.title}</Link>
+          </li>
+        ))}
+      </ul>
+
+      <Link className='text-blue-600' href={"/"}>
+        Back
+      </Link>
+    </div>
   );
 }
 

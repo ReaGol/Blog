@@ -7,11 +7,14 @@ const handleSubmit = (data: any) => {
     
 }
   return (
-    <form action="" onSubmit={handleSubmit}>
-        <input type="text" />
+    <div className='post-card'>
+      {" "}
+      <form action='' onSubmit={handleSubmit}>
+        <input type='text' />
         <button onClick={handleSubmit}>Submit comment</button>
-    </form>
-  )
+      </form>
+    </div>
+  );
 }
 
 export default Comment
