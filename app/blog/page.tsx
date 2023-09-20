@@ -8,6 +8,8 @@ async function getAllPosts() {
     if (!response.ok) {
       throw new Error("Failed to fetch posts.");
     }
+    
+    
     const posts = await response.json();
     return posts;
   } catch (error) {
@@ -21,19 +23,19 @@ async function BlogPost() {
 
   return (
     <div className='mx-4'>
+      <Link className='text-blue-600' href={"/"}>
+        Back
+      </Link>
       <ul>
         {posts.map((post: any) => (
           <li key={post.id}>
             <Link href={`/blog/${post.slug}`}>{post.title}</Link>
-            <Post post={post} />{" "}
-            <Comment />
+            
+            <Post post={post} /> <Comment />
           </li>
         ))}
       </ul>
 
-      <Link className='text-blue-600' href={"/"}>
-        Back
-      </Link>
     </div>
   );
 }

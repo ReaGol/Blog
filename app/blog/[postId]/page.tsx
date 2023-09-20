@@ -9,7 +9,7 @@ interface BlogPost {
   title: string;
   content: string;
   a: string
-
+  comment: string
 }
 
 const BlogPage = ({ posts }: { posts: BlogPost[] }) => {
@@ -18,7 +18,9 @@ const BlogPage = ({ posts }: { posts: BlogPost[] }) => {
       {posts.map((post) => (
         <div key={post.id} className="post-card">
           <Post post={post} />
-          
+          <CommentForm onSubmit={function (comment: string): void {
+            throw new Error('Function not implemented.');
+          } }/>
         </div>
       ))}
     
