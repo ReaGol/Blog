@@ -20,13 +20,13 @@ async function BlogPost() {
   const posts = await getAllPosts();
 
   return (
-    <div>
+    <div className='mx-4'>
       <ul>
         {posts.map((post: any) => (
           <li key={post.id}>
-            <Post post={post} />{" "}
             <Link href={`/blog/${post.slug}`}>{post.title}</Link>
-            <Comment/>
+            <Post post={post} />{" "}
+            <Comment />
           </li>
         ))}
       </ul>

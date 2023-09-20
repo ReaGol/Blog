@@ -8,18 +8,17 @@ interface BlogPost {
   id: number;
   title: string;
   content: string;
+  a: string
 
 }
 
 const BlogPage = ({ posts }: { posts: BlogPost[] }) => {
   return (
-    <div>
+    <div className='content-center justify-center'>
       {posts.map((post) => (
         <div key={post.id} className="post-card">
           <Post post={post} />
-          <CommentForm onSubmit={function (comment: string): void {
-            throw new Error('Function not implemented.');
-          } }/>
+          
         </div>
       ))}
     

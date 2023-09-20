@@ -1,8 +1,8 @@
 import Link from "next/link";
 function about() {
   return (
-    <div>
-      <h1>About this blog</h1>
+    <div className="container mx-auto">
+      <h1 className='flex-row text-center text-2xl my-4'>About this blog</h1>
       <h4>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita modi
         animi veniam. Aspernatur adipisci libero laboriosam consequuntur totam

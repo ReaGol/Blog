@@ -15,7 +15,7 @@ function CommentForm({ onSubmit }: CommentFormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} >
       <input
         type='text'
         placeholder='Add a comment'
